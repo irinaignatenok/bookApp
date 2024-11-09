@@ -1,12 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native'
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Books from './src/components/Books/Books';
+import Borrowed from './src/components/Borrowed/Borrowed';
+
+const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="Books"
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="home" size={size} color={color} />
+            )
+          }}
+          component={Books} />
+        <Tab.Screen
+          name="Borrowed"
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="book" size={size} color={color} />
+            )
+          }}
+
+          component={Borrowed} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
