@@ -17,6 +17,13 @@ function processQuerySnapshot(querySnapshot) {
     return data;
 }
 
+
+export async function loadBorrowedBooks() {
+    const querySnapshot = await getDocs(collection(db, 'BorrowedBook'));
+    return processQuerySnapshot(querySnapshot)
+}
+
+
 export async function loadById(id) {
 
     const docRef = doc(db, "posts", id);

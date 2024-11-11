@@ -1,26 +1,10 @@
+// BookList.js
 import { View, Text, Pressable, FlatList, Image } from 'react-native';
-import * as database from '../../database/index';
-import { useEffect, useState } from 'react';
-import { db } from '../../database/config';
+import { useEffect } from 'react';
 import styles from './styles';
+import BookDetail from './BookDetail/BookDetail';
 
-export default function BookList({ navigation }) {
-    const [books, setBooks] = useState([]);
-
-    useEffect(() => {
-        const loadData = async () => {
-            try {
-                const data = await database.load();
-                console.log("Loaded data:", data);
-                setBooks(data);
-            } catch (error) {
-                console.error("Error loading data:", error);
-            }
-        };
-
-        loadData();
-    }, []);
-
+export default function BookList({ navigation, books }) {
     const handleBookPress = (item) => {
         navigation.navigate('BookDetail', { book: item });
     };

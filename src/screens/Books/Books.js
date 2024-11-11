@@ -6,24 +6,36 @@ import BookList from '../../components/BookList/BookList';
 
 const Stack = createNativeStackNavigator();
 
-export default function Books() {
+export default function Books({ books }) {
     return (
         <Stack.Navigator
             screenOptions={{
-                headerShown: true,
+                headerShown: false,
                 headerTitleAlign: 'center'
             }}
         >
             <Stack.Screen
                 name="BookList"
                 options={{ title: "Booking List" }}
-                component={BookList}
-            />
+            >
+                {(props) => (
+                    <BookList
+                        {...props}
+                        books={books}
+                    />
+                )}
+            </Stack.Screen>
             <Stack.Screen
                 name="BookDetail"
                 options={{ title: 'Booking Detail' }}
-                component={BookDetail}
-            />
+            >
+                {(props) => (
+                    <BookDetail
+                        {...props}
+                        books={books}
+                    />
+                )}
+            </Stack.Screen>
         </Stack.Navigator>
     );
 }

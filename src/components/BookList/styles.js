@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     textContainer: {
-        flex: 1, // Allow text container to take the remaining space
+        flex: 1,
         paddingLeft: 10,
-        paddingTop: 10 // Add some space between image and text
+        paddingTop: 10
     },
     itemName: {
         fontSize: 18,
