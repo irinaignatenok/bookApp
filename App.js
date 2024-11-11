@@ -71,7 +71,7 @@ export default function App() {
           {(props) => (
             <Borrowed
               {...props}
-              borrowedBooks={borrowedBooks}
+              currentUserId="HAG5HmS6ud4uJwN3Cu9W"
             />
           )}
         </Tab.Screen>

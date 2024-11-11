@@ -1,35 +1,3 @@
-// import { StyleSheet } from 'react-native';
-
-
-// export default StyleSheet.create({
-//     itemContainer: {
-//         padding: 15,
-//         marginVertical: 8,
-//         marginHorizontal: 16,
-//         backgroundColor: '#f9f9f9',
-//         borderRadius: 10,
-//         elevation: 3, // For Android shadow
-//         shadowColor: '#000', // For iOS shadow
-//         shadowOffset: { width: 0, height: 1 },
-//         shadowOpacity: 0.2,
-//         shadowRadius: 1,
-//     },
-//     itemName: {
-//         fontSize: 18,
-//         fontWeight: 'bold',
-//     },
-//     itemAuthor: {
-//         fontSize: 14,
-//         color: '#555',
-//     },
-//     itemImage: {
-//         width: 50,
-//         height: 75,
-//         borderRadius: 5,
-//         marginRight: 10,
-//     },
-// })
-
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({

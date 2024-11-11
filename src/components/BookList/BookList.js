@@ -1,12 +1,11 @@
 // BookList.js
 import { View, Text, Pressable, FlatList, Image } from 'react-native';
-import { useEffect } from 'react';
 import styles from './styles';
-import BookDetail from './BookDetail/BookDetail';
+
 
 export default function BookList({ navigation, books }) {
     const handleBookPress = (item) => {
-        navigation.navigate('BookDetail', { book: item });
+        navigation.navigate('BookDetail', { bookId: item.id });
     };
 
     const renderItem = ({ item }) => {
