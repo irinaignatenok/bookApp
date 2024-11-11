@@ -1,12 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native'
-import AntDesign from '@expo/vector-icons/AntDesign';
-import Books from './src/components/Books/Books';
-import Borrowed from './src/components/Borrowed/Borrowed';
+// App.js
 
-const Tab = createBottomTabNavigator()
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Books from './src/screens/Books/Books';
+import Borrowed from './src/screens/Borrowed/Borrowed';
+import { enableScreens } from 'react-native-screens';
+enableScreens();
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -20,17 +24,18 @@ export default function App() {
               <AntDesign name="home" size={size} color={color} />
             )
           }}
-          component={Books} />
+          component={Books}
+        />
         <Tab.Screen
           name="Borrowed"
           options={{
-            headerShown: false,
+            headerShown: true,
             tabBarIcon: ({ color, size }) => (
               <AntDesign name="book" size={size} color={color} />
             )
           }}
-
-          component={Borrowed} />
+          component={Borrowed}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
